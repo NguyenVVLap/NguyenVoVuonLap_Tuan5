@@ -93,5 +93,10 @@ public class NhanVienRestController {
         return result;
     }
 
+    @GetMapping("/getnvluongmax")
+    public List<String> cau26() {
+        return nhanVienService.getMaNVLuongMax();
+    }
+
 
 }
