@@ -19,4 +19,9 @@ public class ChuyenBayRestController {
     public List<ChuyenBay> getChuyenBayDaLat() {
         return chuyenBayService.findByGaDen("DAD");
     }
+
+    @GetMapping("/dodaiduoi10000tren8000")
+    public List<ChuyenBay> cau4() {
+        return chuyenBayService.findByDoDaiUnder10000Above8000();
+    }
 }
