@@ -25,4 +25,9 @@ public class NhanVienRestController {
     public int cau8() {
         return nhanVienService.sumLuongForAllNhanVien();
     }
+
+    @GetMapping("/driveboeing")
+    public List<String> cau9() {
+        return nhanVienService.findNhanVienDriveMayBayBoeing();
+    }
 }
