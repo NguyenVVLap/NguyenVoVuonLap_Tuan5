@@ -90,4 +90,9 @@ public class ChuyenBayRestController {
         }
         return result;
     }
+
+    @GetMapping("/byloaimbboeing")
+    public List<ChuyenBay> cau28() {
+        return chuyenBayService.getCBByLoaiMBBoeing();
+    }
 }
