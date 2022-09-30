@@ -77,4 +77,17 @@ public class ChuyenBayRestController {
     public List<ChuyenBay> cau20() {
         return chuyenBayService.getCBBefore12h();
     }
+
+    @GetMapping("/sochuyenbayditruong12htheogadi")
+    public List<HashMap<String, Object>> cau21() {
+        List<Object[]> objs = chuyenBayService.countCBByGadiBefore12h();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Ga đi", obj[0]);
+            map.put("Số chuyến bay trước 12h", obj[1]);
+            result.add(map);
+        }
+        return result;
+    }
 }
