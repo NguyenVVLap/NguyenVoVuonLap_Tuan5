@@ -72,4 +72,9 @@ public class ChuyenBayRestController {
         }
         return result;
     }
+
+    @GetMapping("/khoihanhtruoc12h")
+    public List<ChuyenBay> cau20() {
+        return chuyenBayService.getCBBefore12h();
+    }
 }
