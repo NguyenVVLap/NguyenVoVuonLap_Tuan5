@@ -35,4 +35,9 @@ public class NhanVienRestController {
     public List<NhanVien> cau10() {
         return nhanVienService.findNhanVienDriveMayBayId747();
     }
+
+    @GetMapping("/drivembboeingandairbus")
+    public List<String> cau12() {
+        return nhanVienService.findNhanVienDriveMayBayBoeingAndAirbus();
+    }
 }
