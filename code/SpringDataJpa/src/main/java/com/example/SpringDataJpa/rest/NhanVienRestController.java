@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -49,5 +51,18 @@ public class NhanVienRestController {
     @GetMapping("/lai3loaimb")
     public List<String> cau22() {
         return nhanVienService.getMaNVDrive3LoaiMB();
+    }
+
+    @GetMapping("/maandtambaymaxnvlai3loaimb")
+    public List<HashMap<String, Object>> cau23() {
+        List<Object[]> objs = nhanVienService.getMaNVAndMaxTamBayOfNVDrive3LoaiMB();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Mã NV", obj[0]);
+            map.put("Tầm bay lớn nhất", obj[1]);
+            result.add(map);
+        }
+        return result;
     }
 }
