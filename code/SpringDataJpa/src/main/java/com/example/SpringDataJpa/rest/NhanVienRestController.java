@@ -2,7 +2,6 @@ package com.example.SpringDataJpa.rest;
 
 import com.example.SpringDataJpa.entity.MayBay;
 import com.example.SpringDataJpa.entity.NhanVien;
-import com.example.SpringDataJpa.service.MayBayService;
 import com.example.SpringDataJpa.service.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/api/maybay")
 @RestController
-public class MayBayRestController {
+@RequestMapping("/api/nhanvien")
+public class NhanVienRestController {
     @Autowired
-    private MayBayService mayBayService;
+    private NhanVienService nhanVienService;
 
-    @GetMapping("/tambayhon10000")
-    public List<MayBay> getChuyenBayDaLat() {
-        return mayBayService.findMayBayTamBayLonHon10000();
+    @GetMapping("/luongduoi10000")
+    public List<NhanVien> getNhanVienLuongUnder10000() {
+        return nhanVienService.findNhanVienLuongUnder10000();
     }
 }
