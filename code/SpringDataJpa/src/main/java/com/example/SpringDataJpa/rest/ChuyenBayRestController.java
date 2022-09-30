@@ -39,4 +39,9 @@ public class ChuyenBayRestController {
     public List<ChuyenBay> cau14() {
         return chuyenBayService.getChuyenBayByLoaiMayBayAirbusA320();
     }
+
+    @GetMapping("/atobtoa")
+    public List<ChuyenBay> cau17() {
+        return chuyenBayService.getChuyenBayForAToBToA();
+    }
 }
