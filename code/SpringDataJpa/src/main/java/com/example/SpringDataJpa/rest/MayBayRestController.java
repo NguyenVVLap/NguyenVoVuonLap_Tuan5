@@ -31,4 +31,9 @@ public class MayBayRestController {
     public List<String> cau11() {
         return mayBayService.findMaMBDriveByNhanVienFirstNameNguyen();
     }
+
+    @GetMapping("/bymachuyenbay")
+    public List<String> cau13() {
+        return mayBayService.getLoaiByMaCBVN280();
+    }
 }
