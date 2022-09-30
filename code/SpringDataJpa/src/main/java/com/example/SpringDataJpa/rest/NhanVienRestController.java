@@ -65,4 +65,33 @@ public class NhanVienRestController {
         }
         return result;
     }
+
+    @GetMapping("/demloaimaybaylaitheomanv")
+    public List<HashMap<String, Object>> cau24() {
+        List<Object[]> objs = nhanVienService.getMaNVAndCountLoaiMB();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Mã NV", obj[0]);
+            map.put("Tổng loại máy bay có thể lái", obj[1]);
+            result.add(map);
+        }
+        return result;
+    }
+
+    @GetMapping("/notphicong")
+    public List<HashMap<String, Object>> cau25() {
+        List<Object[]> objs = nhanVienService.getNVNotPhiCong();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Mã NV", obj[0]);
+            map.put("Tên NV", obj[1]);
+            map.put("Lương", obj[2]);
+            result.add(map);
+        }
+        return result;
+    }
+
+
 }
