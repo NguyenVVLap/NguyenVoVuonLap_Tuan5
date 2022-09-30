@@ -24,4 +24,9 @@ public class ChuyenBayRestController {
     public List<ChuyenBay> cau4() {
         return chuyenBayService.findByDoDaiUnder10000Above8000();
     }
+
+    @GetMapping("/saigontobuonmethuoc")
+    public List<ChuyenBay> cau5() {
+        return chuyenBayService.findBySaiGonToBuonMeThuoc();
+    }
 }
