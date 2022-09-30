@@ -45,4 +45,9 @@ public class NhanVienRestController {
     public List<String> cau15() {
         return nhanVienService.getTenNVByLoaiMBBoeing();
     }
+
+    @GetMapping("/lai3loaimb")
+    public List<String> cau22() {
+        return nhanVienService.getMaNVDrive3LoaiMB();
+    }
 }
