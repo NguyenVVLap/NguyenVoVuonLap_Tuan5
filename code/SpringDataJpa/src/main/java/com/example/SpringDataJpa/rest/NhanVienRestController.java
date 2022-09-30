@@ -98,5 +98,10 @@ public class NhanVienRestController {
         return nhanVienService.getMaNVLuongMax();
     }
 
+    @GetMapping("/sumluong")
+    public int cau27() {
+        return nhanVienService.sumLuongPhiCong();
+    }
+
 
 }
