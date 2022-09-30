@@ -21,4 +21,9 @@ public class MayBayRestController {
     public List<MayBay> getChuyenBayDaLat() {
         return mayBayService.findMayBayTamBayLonHon10000();
     }
+
+    @GetMapping("/countmbboeing")
+    public int cau7() {
+        return mayBayService.countMayBayByLoaiBoeing();
+    }
 }
