@@ -29,4 +29,9 @@ public class ChuyenBayRestController {
     public List<ChuyenBay> cau5() {
         return chuyenBayService.findBySaiGonToBuonMeThuoc();
     }
+
+    @GetMapping("/countcbfromsaigon")
+    public int cau6() {
+        return chuyenBayService.countChuyenBayFromSaiGon();
+    }
 }
