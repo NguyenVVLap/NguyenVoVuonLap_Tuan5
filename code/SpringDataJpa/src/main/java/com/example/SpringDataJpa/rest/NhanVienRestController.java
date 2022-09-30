@@ -20,4 +20,9 @@ public class NhanVienRestController {
     public List<NhanVien> getNhanVienLuongUnder10000() {
         return nhanVienService.findNhanVienLuongUnder10000();
     }
+
+    @GetMapping("/tongluong")
+    public int cau8() {
+        return nhanVienService.sumLuongForAllNhanVien();
+    }
 }
