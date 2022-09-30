@@ -59,4 +59,17 @@ public class ChuyenBayRestController {
         }
         return result;
     }
+
+    @GetMapping("/chiphitheochuyenbay")
+    public List<HashMap<String, Object>> cau19() {
+        List<Object[]> objs = chuyenBayService.sumChiPhiByGadi();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Ga đi", obj[0]);
+            map.put("Tổng chi phí", obj[1]);
+            result.add(map);
+        }
+        return result;
+    }
 }
