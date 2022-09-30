@@ -40,4 +40,9 @@ public class NhanVienRestController {
     public List<String> cau12() {
         return nhanVienService.findNhanVienDriveMayBayBoeingAndAirbus();
     }
+
+    @GetMapping("/loaimbboeing")
+    public List<String> cau15() {
+        return nhanVienService.getTenNVByLoaiMBBoeing();
+    }
 }
