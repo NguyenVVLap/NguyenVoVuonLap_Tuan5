@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -43,5 +45,18 @@ public class ChuyenBayRestController {
     @GetMapping("/atobtoa")
     public List<ChuyenBay> cau17() {
         return chuyenBayService.getChuyenBayForAToBToA();
+    }
+
+    @GetMapping("/chuyenbaytheoga")
+    public List<HashMap<String, Object>> cau18() {
+        List<Object[]> objs = chuyenBayService.countChuyenBayByGaDi();
+        List<HashMap<String, Object>> result = new ArrayList<>();
+        for (Object[] obj: objs) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("Ga đi", obj[0]);
+            map.put("Số chuyến bay", obj[1]);
+            result.add(map);
+        }
+        return result;
     }
 }
